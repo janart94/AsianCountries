@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="country"
+            type="com.flobiz.sample.data.model.Country" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvCountry"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/item_semi_background"
+        app:cardCornerRadius="@dimen/cardview_default_radius"
+        app:cardElevation="@dimen/cardview_default_elevation"
+        app:cardUseCompatPadding="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp">
+
+
+            <ImageView
+                android:id="@+id/imgFlag"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:adjustViewBounds="true"
+                app:imageSvgUrl="@{country.flag}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/guideLine1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideLine1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="120dp"
+                app:layout_constraintStart_toEndOf="@+id/imgFlag" />
+
+            <TextView
+                android:id="@+id/tvName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="@string/country"
+                android:maxLines="2"
+                android:textAlignment="textStart"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/_18sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@id/tvCapital"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/guideLine1"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="@{country.name}" />
+
+            <TextView
+                android:id="@+id/tvCapitalLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="@string/capital"
+                android:maxLines="1"
+                android:paddingEnd="@dimen/_6dp"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="@dimen/_14sp"
+                app:layout_constraintBottom_toTopOf="@+id/tvPopulationLabel"
+                app:layout_constraintStart_toEndOf="@+id/guideLine1"
+                app:layout_constraintTop_toBottomOf="@id/tvName" />
+
+
+            <TextView
+                android:id="@+id/tvCapital"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:textAlignment="textStart"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/_16sp"
+                app:layout_constraintBottom_toBottomOf="@+id/tvCapitalLabel"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tvCapitalLabel"
+                app:layout_constraintTop_toBottomOf="@id/tvName"
+                app:layout_constraintTop_toTopOf="@+id/tvCapitalLabel"
+                tools:text="@{country.capital}" />
+
+
+            <TextView
+                android:id="@+id/tvPopulationLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:hint="@string/population"
+                android:maxLines="1"
+                android:paddingEnd="@dimen/_6dp"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/guideLine1"
+                app:layout_constraintTop_toBottomOf="@id/tvCapitalLabel" />
+
+
+            <TextView
+                android:id="@+id/tvPopulation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/_16sp"
+                app:layout_constraintBottom_toBottomOf="@+id/tvPopulationLabel"
+                app:layout_constraintStart_toEndOf="@+id/tvPopulationLabel"
+                app:layout_constraintTop_toBottomOf="@id/tvName"
+                app:layout_constraintTop_toTopOf="@+id/tvPopulationLabel"
+                app:population="@{country.population}" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</layout>

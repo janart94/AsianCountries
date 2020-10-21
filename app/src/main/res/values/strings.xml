@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Asian Countries</string>
+    <string name="not_connected">Not connected!</string>
+    <string name="try_again">Try again!</string>
+    <string name="country">Country</string>
+    <string name="capital">Capital:</string>
+    <string name="population">Population:</string>
+    <string name="press_close_to_disable_ads">Press close to disable Ads</string>
+    <string name="enjoy_travelling_around_asia">Enjoy travelling around Asia</string>
+</resources>

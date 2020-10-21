@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#034573</color>
+    <color name="colorPrimaryDark">#090b17</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="gradient_light_color">#024672</color>
+    <color name="gradient_dark_color">#090b17</color>
+    <color name="ad_text">#8D605B5B</color>
+    <color name="item_semi_background">#A3034573</color>
+</resources>
